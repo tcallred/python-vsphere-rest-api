@@ -85,7 +85,7 @@ def specific_vm_perf(host, user, password, vm_name):
 
 def main():
     try:
-        print(str(specific_vm_perf('151.154.216.201', 'root', 'R))Tr0x', 'Exchange2012-st7059')))
+        print(str(specific_vm_perf('151.155.216.201', 'root', 'R))Tr0x', 'Exchange2012-st7059')))
     except IOError as e:
         print(e)
     except AssertionError as e:

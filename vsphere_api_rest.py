@@ -5,11 +5,13 @@
 
 from flask import Flask
 from flask_restful import Api, Resource, request
+from flask_cors import CORS
 from vm_perf import specific_vm_perf
 import traceback
 import sys
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
 
 USERNAME = sys.argv[1]
@@ -29,6 +31,8 @@ class VirtualMachine(Resource):
     def get(self):
         try:
             args = request.args
+            if len(request.args) < 2:
+                return "Not enough params", 400
             res = specific_vm_perf(args['host'], USERNAME, PASSWORD, args['name'])
             return res, 200
         except Exception as e:

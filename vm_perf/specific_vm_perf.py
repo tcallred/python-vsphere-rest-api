@@ -6,7 +6,7 @@ import atexit
 
 """
 Takes: ESX host name, username, password, virtual machine name
-Returns: Dict containing the name of the machine, cpu and memory usage as %
+Returns: Dict containing the name of the machine, cpu, disk usage, and memory usage as %
 """
 
 
@@ -75,12 +75,17 @@ def specific_vm_perf(host, user, password, vm_name):
         elif counter_info.keys()[counter_info.values().index(val.id.counterId)] == "mem.usage.average":
             output['mem'] = str(val.value[0])
 
+    vm_summary = our_vm.summary
+    info = vm_summary.vm.guest.disk
+    for each in info:
+        if each.diskPath == '/home' or each.diskPath == 'C:\\':
+            output['disk'] = str(int(round((1 - (float(each.freeSpace) / each.capacity)) * 100)))
     return output
 
 
 def main():
     try:
-        print(str(specific_vm_perf('151.155.216.206', 'root', 'R))Tr0x', 'eDir-st8123')))
+        print(str(specific_vm_perf('151.154.216.201', 'root', 'R))Tr0x', 'Exchange2012-st7059')))
     except IOError as e:
         print(e)
     except AssertionError as e:

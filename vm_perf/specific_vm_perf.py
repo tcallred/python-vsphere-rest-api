@@ -85,7 +85,7 @@ def specific_vm_perf(host, user, password, vm_name):
 
 def main():
     try:
-        print(str(specific_vm_perf('151.155.216.3', 'root', 'R))Tr0x', 'SSPR4.3-336-st8133')))
+        print(str(specific_vm_perf('', '', '', '')))
     except IOError as e:
         print(e)
     except AssertionError as e:

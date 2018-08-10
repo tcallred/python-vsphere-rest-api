@@ -78,14 +78,14 @@ def specific_vm_perf(host, user, password, vm_name):
     vm_summary = our_vm.summary
     info = vm_summary.vm.guest.disk
     for each in info:
-        if each.diskPath == '/home' or each.diskPath == 'C:\\':
+        if each.diskPath == '/home' or each.diskPath == "/" or each.diskPath == 'C:\\':
             output['disk'] = str(int(round((1 - (float(each.freeSpace) / each.capacity)) * 100)))
     return output
 
 
 def main():
     try:
-        print(str(specific_vm_perf('151.155.216.201', 'root', 'R))Tr0x', 'Exchange2012-st7059')))
+        print(str(specific_vm_perf('151.155.216.3', 'root', 'R))Tr0x', 'SSPR4.3-336-st8133')))
     except IOError as e:
         print(e)
     except AssertionError as e:

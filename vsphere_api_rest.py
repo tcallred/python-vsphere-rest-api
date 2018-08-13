@@ -16,7 +16,7 @@ api = Api(app)
 
 USERNAME = sys.argv[1]
 PASSWORD = sys.argv[2]
-REST_IP = "151.155.216.36"
+REST_IP = sys.argv[3]
 
 
 class VirtualMachine(Resource):
@@ -24,8 +24,8 @@ class VirtualMachine(Resource):
       Usage: <rest-server-ip-or-dns>:<port>/vm?host=<host>&name=<vm-name>
             eg 151.155.216.36:5000/vm?host=151.155.216.208&name=eDir-st8123
 
-      Returns: JSON with cpu and memory usage as % (divide by 100)
-            eg 'mem':'266' -> using 2.66% of memory
+      Returns: JSON with cpu and memory usage as % (divide by 100) and disk space as percentage (no divide)
+            eg 'mem':'266' -> using 2.66% of memory, 'disk': '58' -> using 58% of disk
 
     """
     def get(self):

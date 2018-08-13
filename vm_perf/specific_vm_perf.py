@@ -6,7 +6,7 @@ import atexit
 
 """
 Takes: ESX host name, username, password, virtual machine name
-Returns: Dict containing the name of the machine, cpu, disk usage, and memory usage as % in JSON
+Returns: Dict containing the name of the machine, cpu, disk usage, and memory usage as %
 """
 
 
